@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;  /* Lighter background for better readability */
+      color: #333;  /* Darker text for better contrast */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 500px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background: #fff;  /* White container background */
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      animation: marquee 10s linear infinite;  /* Optional header animation */
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(35%);
+      }
+      100% {
+        transform: translateX(-35%);
+      }
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background: #eee;  /* Lighter input background */
+      color: #333;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-bottom: 10px;  /* Add space between input and result */
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(to right, #4169E1, #4CAF50);  /* Blue-to-green gradient */
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Sentiment Analysis</h1>
+  <form action="/analyze" method="post">
+    <label for="review">Enter your review:</label>
+
+    <h1>Sentiment Analysis</h1>
+    <form action="/analyze" method="post">
+        <label for="review">Enter your review:</label><br>
+        <textarea id="review" name="review" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

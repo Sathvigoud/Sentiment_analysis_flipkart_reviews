@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Analysis Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;  /* Lighter background for better readability */
+      color: #333;  /* Darker text for better contrast */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background-color: #fff;  /* White container background */
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 20px;  /* Smaller font size for regular text */
+      margin-bottom: 10px;
+    }
+
+    .result {
+      font-size: 28px;  /* Larger font size for sentiment */
+      font-weight: bold;
+      margin-bottom: 15px;  /* More space between elements */
+    }
+
+    #sentimentEmoji {
+      font-size: 68px;  /* Adjust as needed */
+    }
+
+    a {
+      color: #4169E1;  /* Blue link color */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #4CAF50;  /* Green hover color */
+    }
+  </style>
+</head>
+<body>
+  <h1>Sentiment Analysis Results</h1>
+  <div class="container">
+    <p>Your review: {{ review }}</p>
+    <p class="result">Sentiment: {{ sentiment }}</p>
+    <p id="sentimentEmoji"></p>
+    <p><a href="/">Go back</a></p>
+  </div>
+  <script>
+    // JavaScript code to dynamically update the emoji based on sentiment
+    var sentimentResult = "{{ sentiment }}"; // Get the sentiment result from your backend
+
+    // Define emojis for positive and negative sentiments
+    var positiveEmoji = ""; // Replace with your preferred positive emoji
+    var negativeEmoji = ""; // Replace with your preferred negative emoji
+
+    // Get the element where the emoji will be displayed
+    var emojiElement = document.getElementById("sentimentEmoji");
+
+    // Update the emoji based on the sentiment result
+    if (sentimentResult === "Positive") {
+      emojiElement.textContent = positiveEmoji;
+    } else if (sentimentResult === "Negative") {
+      emojiElement.textContent = negativeEmoji;
+    }
+  </script>
+</body>
+</html>
